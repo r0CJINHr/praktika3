@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Автодобавление</h2>
+    <button
+      type="submit"
+      id="submit"
+      onclick="document.getElementById('demo').innerHTML=words[randomSum(0, 3)];"
+    >
+      часто употребляемые слова
+    </button>
+    <p id="demo"></p>
+
+    <script>
+      const words = ["добрый день", "спасибо", "пожалуйста", "к сожалению"];
+
+      function randomSum(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+    </script>
+
+    <h2>Поиск и замена</h2>
+    <p id="demo0"></p>
+    <form name="vvod">
+      Слово1: <input name="slovo1" type="text" value="Текст" /> Слово2:
+      <input name="slovo2" type="text" value="Текст" />
+      <button onclick></button>
+    </form>
+
+    <script>
+      let text =
+        "В России будет переименована сеть магазинов OBI. Среди возможных названий - HOBI или OBBI.";
+      document.getElementById("demo0").innerHTML = text;
+      let word1 = document.vvod.slovo1;
+      let word2 = document.vvod.slovo2;
+
+      function searchWord(word1) {
+        return (word1 = text.indexOf(word1));
+      }
+
+      function replaceWord(word2) {
+        return (text = text.replace(word1, word2));
+      }
+    </script>
+  </body>
+</html>
